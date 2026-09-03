@@ -1,33 +1,96 @@
-# 🍕 Sistema de Estoque - Pizzaria
+# 🍕 Sistema de Controle de Estoque | Diego's Pizzaria
 
-Sistema web desenvolvido para auxiliar no controle de estoque e gerenciamento de produtos de uma pizzaria.
+Sistema web desenvolvido para auxiliar no controle de estoque de uma pizzaria, permitindo acompanhar produtos, registrar entradas e saídas e consultar o histórico das movimentações.
 
-O projeto foi desenvolvido com foco em facilitar o acompanhamento dos produtos, movimentações de estoque e organização das informações em um sistema centralizado.
+O projeto foi desenvolvido com foco em uma necessidade prática de organização e controle de estoque, utilizando **JavaScript** no desenvolvimento da aplicação e **Firebase** para autenticação e armazenamento dos dados.
 
-## 🚀 Tecnologias utilizadas
+## 📸 Sobre o projeto
 
-* HTML5
-* CSS3
-* JavaScript
-* Firebase Authentication
-* Firebase Realtime Database
-* Progressive Web App (PWA)
-* Service Worker
+A aplicação foi pensada para tornar o acompanhamento do estoque mais simples e centralizado.
 
-## 📋 Funcionalidades
+O usuário pode consultar a quantidade disponível de produtos, registrar movimentações e acompanhar informações do estoque em tempo real.
 
-* 🔐 Sistema de autenticação de usuários
-* 📦 Controle de estoque
-* ➕ Registro de entrada de produtos
-* ➖ Registro de saída de produtos
-* 📊 Consulta de movimentações
-* 📈 Cálculo de saldos e médias
-* 🏪 Organização dos dados por loja
-* 💾 Armazenamento dos dados em tempo real
-* 📱 Interface adaptada para diferentes dispositivos
-* ⚡ Funcionamento como aplicação web instalável (PWA)
+O sistema possui diferentes categorias de produtos, permitindo organizar o estoque de acordo com a operação da pizzaria.
 
-## 🏗️ Estrutura do projeto
+## 🚀 Funcionalidades
+
+### 🔐 Autenticação
+
+* Login utilizando Firebase Authentication
+* Controle de acesso para usuários autenticados
+* Encerramento de sessão
+
+### 📦 Controle de estoque
+
+* Visualização dos produtos cadastrados
+* Quantidade disponível em estoque
+* Organização por categorias
+* Identificação de produtos com estoque baixo
+* Atualização dos dados em tempo real
+
+### 🔄 Movimentações
+
+* Registro de entradas
+* Registro de saídas
+* Validação da quantidade disponível antes de uma saída
+* Histórico das movimentações
+* Exclusão de movimentações
+
+### 📊 Dashboard
+
+O sistema apresenta informações gerais do estoque, incluindo:
+
+* Total de itens em estoque
+* Movimentações realizadas no dia
+* Produtos com estoque baixo
+* Produtos e movimentações por categoria
+
+### 📁 Exportação de dados
+
+A aplicação permite exportar informações do estoque em diferentes formatos:
+
+* CSV
+* Excel
+* Relatório completo em HTML
+
+O relatório também reúne informações do histórico e dados do estoque.
+
+## 🛠️ Tecnologias utilizadas
+
+| Tecnologia                     | Utilização                                    |
+| ------------------------------ | --------------------------------------------- |
+| **HTML5**                      | Estrutura da aplicação                        |
+| **CSS3**                       | Estilização e responsividade                  |
+| **JavaScript**                 | Lógica e funcionalidades do sistema           |
+| **Firebase Authentication**    | Autenticação dos usuários                     |
+| **Firebase Realtime Database** | Armazenamento dos dados                       |
+| **SheetJS (XLSX)**             | Exportação para Excel                         |
+| **Service Worker**             | Recursos de PWA e funcionamento offline/cache |
+
+## 🧠 Principais conceitos aplicados
+
+Durante o desenvolvimento, foram colocados em prática conceitos como:
+
+* Manipulação do DOM
+* Eventos e formulários
+* Operações CRUD
+* Autenticação de usuários
+* Integração com banco de dados
+* Consumo de APIs
+* Validação de dados
+* Organização de informações por categorias
+* Controle de estado da aplicação
+* Geração de arquivos
+* Desenvolvimento responsivo
+* PWA e Service Workers
+
+## 📱 PWA
+
+O projeto possui configuração para **Progressive Web App (PWA)** através de `manifest.json` e `Service Worker`.
+
+Isso permite que a aplicação tenha características de um aplicativo web instalável e utilize recursos de cache definidos pelo Service Worker.
+
+## 📂 Estrutura atual
 
 ```text
 APP PIZZARIA/
@@ -40,21 +103,11 @@ APP PIZZARIA/
 └── icon-512.png
 ```
 
-## 🔥 Firebase
+A aplicação atualmente concentra a interface, estilos e lógica principal no `index.html`, enquanto o `manifest.json` e o `sw.js` são responsáveis pela configuração do PWA.
 
-O sistema utiliza o Firebase para autenticação e armazenamento dos dados.
+## ▶️ Como executar
 
-### Authentication
-
-O Firebase Authentication é utilizado para controlar o acesso dos usuários ao sistema.
-
-### Realtime Database
-
-Os dados do sistema são armazenados no Firebase Realtime Database, permitindo que as informações sejam sincronizadas em tempo real.
-
-As regras de segurança do banco exigem autenticação para leitura e escrita dos dados.
-
-## 💻 Como executar
+Por ser uma aplicação web, o projeto pode ser executado utilizando um servidor local.
 
 ### 1. Clone o repositório
 
@@ -62,61 +115,63 @@ As regras de segurança do banco exigem autenticação para leitura e escrita do
 git clone https://github.com/Dantas1504/sistema-estoque.git
 ```
 
-### 2. Entre na pasta
+### 2. Acesse a pasta
 
 ```bash
 cd sistema-estoque
 ```
 
-### 3. Abra o projeto
+### 3. Execute com um servidor local
 
-Como o projeto utiliza HTML, CSS e JavaScript, ele pode ser executado utilizando um servidor local.
+Uma opção é utilizar a extensão **Live Server** no Visual Studio Code.
 
-No VS Code, uma opção simples é utilizar a extensão **Live Server**.
+Depois, abra a aplicação pelo endereço fornecido pelo servidor local.
 
-## 🔐 Segurança
+> Para utilizar a autenticação e o banco de dados, é necessário configurar um projeto próprio no Firebase e utilizar suas respectivas credenciais e regras de acesso.
 
-As credenciais de acesso dos usuários não ficam armazenadas diretamente no código-fonte.
+## 🔒 Segurança
 
-O projeto utiliza o Firebase Authentication para autenticação.
+O projeto utiliza o **Firebase Authentication** para identificar os usuários e o **Firebase Realtime Database** para persistência dos dados.
 
-As regras do Firebase Realtime Database também exigem que o usuário esteja autenticado para realizar operações no banco.
+As informações de autenticação não ficam armazenadas diretamente no código da aplicação.
 
-> ⚠️ Este projeto utiliza um banco Firebase real. Para utilizar o sistema em outro ambiente, é necessário configurar seu próprio projeto Firebase e suas respectivas regras de segurança.
-
-## 📱 PWA
-
-O sistema possui recursos de Progressive Web App, permitindo que a aplicação possa ser instalada em dispositivos compatíveis.
-
-O projeto utiliza:
-
-* `manifest.json`
-* Service Worker
-* Ícones para instalação
+Em uma utilização real em produção, as regras do Firebase devem ser configuradas de acordo com os níveis de acesso necessários para cada usuário e ambiente.
 
 ## 🎯 Objetivo do projeto
 
-Este projeto foi desenvolvido para solucionar uma necessidade real de gerenciamento de estoque em uma pizzaria, utilizando tecnologias web e serviços em nuvem.
+Este projeto foi desenvolvido como uma forma de aplicar na prática conhecimentos adquiridos durante meus estudos em **Engenharia de Software** e desenvolvimento web.
 
-Além da aplicação prática, o projeto representa uma experiência de desenvolvimento envolvendo:
+Mais do que criar uma interface, o objetivo foi entender como diferentes partes de uma aplicação se conectam: autenticação, banco de dados, regras de negócio, interface e armazenamento das informações.
 
-* Desenvolvimento Front-end
-* JavaScript
-* Banco de dados em tempo real
-* Autenticação
-* Aplicações PWA
-* Integração com serviços Firebase
+## 📚 O que aprendi
+
+O desenvolvimento deste projeto me permitiu aprofundar conhecimentos em **JavaScript**, principalmente na manipulação de dados, criação de funcionalidades e integração com serviços externos.
+
+Também tive contato mais próximo com o Firebase e com situações que aparecem durante o desenvolvimento de uma aplicação real, como validação de operações, organização dos dados e controle de acesso.
+
+## 🔮 Próximos passos
+
+Algumas melhorias que podem ser implementadas futuramente:
+
+* Separação do JavaScript em módulos
+* Separação dos estilos em arquivos CSS
+* Melhor organização da estrutura do projeto
+* Diferentes níveis de permissão para usuários
+* Melhorias na experiência de uso
+* Novos relatórios e indicadores
+* Testes automatizados
 
 ## 👨‍💻 Desenvolvedor
 
 **Iury Reis Dantas**
 
-Estudante de Engenharia de Software e Desenvolvimento de Sistemas.
+Estudante de Engenharia de Software, interessado em desenvolvimento de software e buscando evoluir através de projetos práticos.
 
-### 🔗 GitHub
+### 🔗 Links
 
-https://github.com/Dantas1504
+* **GitHub:** https://github.com/Dantas1504
+* **Repositório:** https://github.com/Dantas1504/sistema-estoque
 
 ---
 
-⭐ Se este projeto foi útil ou interessante para você, considere deixar uma estrela no repositório.
+⭐ Se este projeto foi útil ou interessante para você, fique à vontade para deixar uma estrela no repositório.
