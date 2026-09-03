@@ -1,4 +1,4 @@
-# 🍕 Sistema de Controle de Estoque | Diego's Pizzaria
+# 🍕 Sistema de Controle de Estoque 
 
 Sistema web desenvolvido para auxiliar no controle de estoque de uma pizzaria, permitindo acompanhar produtos, registrar entradas e saídas e consultar o histórico das movimentações.
 
